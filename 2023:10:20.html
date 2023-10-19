@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Variable Font Animation</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900">
+    <link rel="icon" href="favicon.ico"> 
+    <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script>
+</head>
+<style>
+body {
+    margin: 0px;
+}
+#container {
+    scroll-timeline-name: --main;
+    position: fixed;
+    overflow: scroll;
+    height: 90vh;
+    width: 90vw;
+    top: 5vh;
+    left: 5vw;
+    border: 1px solid black;
+}
+.spacer {
+    height: 300vh;
+}
+.edit {
+    position: fixed;
+    width: 90vw;
+    top: 50%;
+    left: 50%;;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    pointer-events:none;
+
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 20vw;
+    font-weight: 100;
+    color: black;
+
+    animation: noto-animation linear forwards;
+    animation-timeline: --main;
+}
+@keyframes noto-animation {
+    to {
+        font-weight: 900;
+        color: blue;
+    }
+}
+</style>
+<body>
+    <div id="container">
+        <div class="edit" id="noto" contentEditable="true" >Variable</div>
+        <div class="spacer"></div>
+    </div>
+</body>
